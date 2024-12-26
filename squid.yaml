@@ -1,0 +1,16 @@
+manifestVersion: subsquid.io/v0.1
+name: substrate-template
+version: 1
+description: |-
+  Substrate squid template
+build:
+
+deploy:
+  addons:
+    postgres:
+    rpc:
+      - kusama.http # RPC proxy URL will be supplied via the RPC_KUSAMA_HTTP env variable
+  processor:
+    cmd: [ "sqd", "process:prod" ]
+  api:
+    cmd: [ "sqd", "serve:prod" ]
